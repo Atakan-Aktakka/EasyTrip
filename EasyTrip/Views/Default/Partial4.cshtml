@@ -1,0 +1,21 @@
+﻿@using EasyTrip.Models.Siniflar
+@model List<Blog>
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var x in Model.OrderByDescending(x => x.ID).Take(3))
+        {
+        <div class="bot-img">
+            <img src="@x.BlogImage "style="width:120px; height:65px;"/>
+        </div>
+        <div class="bot-desc">
+            <p>
+                @x.Aciklma
+            </p>
+        </div>
+        <div class="clear"></div>
+        }
+    </div>
+@*     @await Html.PartialAsync("Partial5") *@
+</div>
